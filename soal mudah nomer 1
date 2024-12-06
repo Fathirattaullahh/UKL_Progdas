@@ -1,0 +1,46 @@
+//program ekspedisi paket
+import java.util.Scanner;
+public class soal1{
+    public static void main(String[] args) {
+    Scanner input= new Scanner(System.in);
+  int jarakTerendah=4250; //harga saat jarak pengiriman <=10km
+    int jarakJauh=6000;     //harga saat jarak pengiriman >10km
+    int hargaVolume=50000;  //biaya tambahan saat volume >100cm^3
+
+    System.out.println("Masukkan berat paket paket: ");
+    int berat=input.nextInt();
+    System.out.println("Masukkan jarak pengiriman: ");
+    int jarakKirim=input.nextInt();
+
+    System.out.println("Masukkan panjang barang: ");
+    int panjang=input.nextInt();
+ System.out.println("Masukkan lebar barang: ");
+    int lebar=input.nextInt();
+    
+    System.out.println("Masukkan tinggi barang: ");
+    int tinggi=input.nextInt();
+
+    int volume=panjang*lebar*tinggi;
+    if(jarakKirim<=10){
+        int harga1=jarakTerendah*berat;
+              if(volume>100){
+            int hargatotal1=harga1+hargaVolume;
+            System.out.println("Total biaya anda: "+hargatotal1);
+        }
+             else{
+            System.out.println("Total biaya anda: "+harga1);
+        }
+    }
+    else{
+         int harga2=jarakJauh*berat;
+        if(volume>100){
+            int hargatotal2=harga2+hargaVolume;
+            System.out.println("Total biaya anda: "+hargatotal2);
+        }
+        else{
+            System.out.println("Total biaya anda: "+harga2);
+        }
+
+    }
+    }
+}
